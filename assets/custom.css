@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  --background: #f6f3f6;
+  --almost-black: #45454e;
+}
+
+body {
+  background: var(--background);
+  color: var(--almost-black);
+}
+
+body,
+html,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+input,
+textarea {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  color: var(--almost-black);
+}
+
+.ja-content,
+.ja-header {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+.ja-header {
+  font-size: 2em;
+  line-height: 2.5em;
+}
+
+.constrainer {
+  max-width: 768px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+nav {
+  border-bottom: rgba(33,33,33,.3) 1px solid;
+}
+
+.has-padding {
+  padding: 1em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.really-white-bg {
+  background: white;
+}
+
+main {
+  min-height: 75vh;
+}
+
+.site-title {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}

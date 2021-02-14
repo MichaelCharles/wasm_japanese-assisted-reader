@@ -6,27 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Japanese Assisted Reader</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/styles.css" />
+
+    <link rel="stylesheet" href="assets/bulma.min.css" />
+    <link rel="stylesheet" href="assets/custom.css" />
   </head>
   <body>
-    <main>
-      <div id="text-input-area">
-        <div id="text-area-wrapper">
-          <textarea id="ja-input">これは日本語です！</textarea>
-        </div>
-        <div id="results-viewer"></div>
-        <div class="button-wrapper">
-          <button id="run-reader" onClick="run();">Process</button>
-          <button id="change-text" onClick="reset();">Change Text</button>
+
+    <nav class="level">
+      <!-- Left side -->
+      <div class="level-left">
+        <div class="level-item">
+          <p class="title is-5 has-padding site-title">
+            Japanese Assisted Reader
+          </p>
         </div>
       </div>
-    </main>
     
+      <!-- Right side -->
+      <div class="level-right has-padding text-center">
+        <button id="load-text" class="button is-secondary">Load New Text</button>
+
+      </div>
+    </nav>
+    
+
+<main class="constrainer">
+  <section id="input" class="section box">
+    <div class="container">
+      
+      <p>Paste in the title (optional) and the content of a Japanese article that you would like to read. After clicking on "Parse," furigana will be automatically added to the text. If you aren't sure what to read, click on "Load Sample" to load a sample text.</p><br>
+
+      <div class="field">
+        <label class="label">Title</label>
+        <div class="control">
+          <input id="title-input" class="input" type="text" placeholder="Title (optional)">
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Body</label>
+        <div class="control">
+          <textarea id="body-input" class="textarea" placeholder="Paste in the Japanese text you'd like to read..."></textarea>
+        </div>
+      </div>
+      
+      
+      <div class="field is-grouped">
+        <div class="control">
+          <button id="parse" class="button is-link">Parse</button>
+        </div>
+        <div class="control">
+          <button id="sample" class="button is-link is-light">Load Sample</button>
+        </div>
+        <div class="control">
+          <button id="clear" class="button is-link is-light">Clear</button>
+        </div>
+        <div class="control"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reader" class="section">
+    <div class="container">
+      <h1 id="title" class="title ja-header">
+        
+      </h1>
+      <p id="body" class="ja-content">
+      
+      </p>
+    </div>
+  </section>
+</main>
+    
+<footer class="footer really-white-bg">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Japanese Assisted Reader</strong> by <a href="https://michaelcharl.es">Michael Charles Aubrey</a>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+    </p>
+  </div>
+</footer>
     <script src="assets/wasm_exec.js"></script>
-    <script src="assets/script.js"></script>
+    <script src="assets/wasm_init.js"></script>
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/scripts.js"></script>
   </body>
 </html>
