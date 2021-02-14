@@ -22,13 +22,12 @@ h4,
 h5,
 input,
 textarea {
-  font-family: "M PLUS Rounded 1c", sans-serif;
   color: var(--almost-black);
 }
 
 .ja-content,
 .ja-header {
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family : 'ヒラギノ角ゴ ProN' , 'Hiragino Kaku Gothic ProN' , '游ゴシック' , '游ゴシック体' , YuGothic , 'Yu Gothic' , 'メイリオ' , Meiryo , 'ＭＳ ゴシック' , 'MS Gothic' , HiraKakuProN-W3 , 'TakaoExゴシック' , TakaoExGothic , 'MotoyaLCedar' , 'Droid Sans Japanese' , sans-serif;
   font-size: 1.5em;
   line-height: 2em;
 }
