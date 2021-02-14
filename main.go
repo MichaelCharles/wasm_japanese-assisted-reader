@@ -20,6 +20,5 @@ func registerCallbacks() {
 
 func read(this js.Value, i []js.Value) interface{} {
 	sourceText := js.ValueOf(i[0])
-	result := rubywriter.Write(sourceText.String())
-	return result
+	return rubywriter.Write(sourceText.String())
 }
