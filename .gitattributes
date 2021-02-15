@@ -1,1 +1,1 @@
-assets/wasm_exec.js -linguist-vendored
+assets/wasm_exec.js linguist-detectable=false
