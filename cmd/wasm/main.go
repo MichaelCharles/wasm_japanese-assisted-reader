@@ -2,7 +2,7 @@ package main
 
 import (
 	"log"
-	js "syscall/js"
+	"syscall/js"
 
 	"github.com/mcaubrey/wasm_japanese-assisted-reader/pkg/rubywriter"
 )
@@ -18,7 +18,7 @@ func registerCallbacks() {
 	js.Global().Set("read", js.FuncOf(read))
 }
 
-func read(this js.Value, i []js.Value) interface{} {
+func read(_ js.Value, i []js.Value) interface{} {
 	sourceText := js.ValueOf(i[0])
 	return rubywriter.Write(sourceText.String())
 }

@@ -11,6 +11,7 @@ const (
 	codeDiff = katakanaLo - hiraganaLo
 )
 
+//goland:noinspection GoUnusedExportedFunction
 func HiraganaToKatakana(str string) string {
 	src := []rune(str)
 	dst := make([]rune, len(src))
@@ -43,10 +44,12 @@ func IsKanji(r rune) bool {
 	return unicode.In(r, unicode.Han)
 }
 
+//goland:noinspection GoUnusedExportedFunction
 func IsKatakana(r rune) bool {
 	return unicode.In(r, unicode.Katakana)
 }
 
+//goland:noinspection GoUnusedExportedFunction
 func IsHiragana(r rune) bool {
 	return unicode.In(r, unicode.Hiragana)
 }

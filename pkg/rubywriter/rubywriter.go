@@ -7,7 +7,7 @@ import (
 
 	"github.com/ikawaha/kagome-dict/ipa"
 	"github.com/ikawaha/kagome/v2/tokenizer"
-	ja "github.com/mcaubrey/wasm_japanese-assisted-reader/internal/ja"
+	"github.com/mcaubrey/wasm_japanese-assisted-reader/internal/ja"
 )
 
 func makeReverse(runes []rune) []rune {
