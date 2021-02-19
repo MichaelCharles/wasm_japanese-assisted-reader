@@ -5,11 +5,15 @@
 html {
   --background: #f6f3f6;
   --almost-black: #45454e;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 body {
   background: var(--background);
   color: var(--almost-black);
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 body,
@@ -27,7 +31,10 @@ textarea {
 
 .ja-content,
 .ja-header {
-  font-family : 'ヒラギノ角ゴ ProN' , 'Hiragino Kaku Gothic ProN' , '游ゴシック' , '游ゴシック体' , YuGothic , 'Yu Gothic' , 'メイリオ' , Meiryo , 'ＭＳ ゴシック' , 'MS Gothic' , HiraKakuProN-W3 , 'TakaoExゴシック' , TakaoExGothic , 'MotoyaLCedar' , 'Droid Sans Japanese' , sans-serif;
+  font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック",
+    "游ゴシック体", YuGothic, "Yu Gothic", "メイリオ", Meiryo, "ＭＳ ゴシック",
+    "MS Gothic", HiraKakuProN-W3, "TakaoExゴシック", TakaoExGothic,
+    "MotoyaLCedar", "Droid Sans Japanese", sans-serif;
   font-size: 1.5em;
   line-height: 2em;
 }
@@ -44,7 +51,7 @@ textarea {
 }
 
 nav {
-  border-bottom: rgba(33,33,33,.3) 1px solid;
+  border-bottom: rgba(33, 33, 33, 0.3) 1px solid;
 }
 
 .has-padding {
@@ -61,9 +68,114 @@ nav {
 
 main {
   min-height: 75vh;
+  display: none;
 }
 
 .site-title {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
+}
+
+#spinner-container {
+  min-height: 75vh;
+}
+
+#spinner-container div {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  -webkit-animation: rotator 1.4s linear infinite;
+  animation: rotator 1.4s linear infinite;
+}
+
+@-webkit-keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+.path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  -webkit-animation: dash 1.4s ease-in-out infinite,
+    colors 5.6s ease-in-out infinite;
+  animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes colors {
+  0% {
+    stroke: rgb(96, 209, 179);
+  }
+  25% {
+    stroke: rgb(49, 116, 220);
+  }
+  50% {
+    stroke: rgb(97, 210, 97);
+  }
+  75% {
+    stroke: rgb(52, 222, 234);
+  }
+  100% {
+    stroke: rgb(87, 120, 250);
+  }
+}
+
+@keyframes colors {
+  0% {
+    stroke: rgb(96, 209, 179);
+  }
+  25% {
+    stroke: rgb(49, 116, 220);
+  }
+  50% {
+    stroke: rgb(97, 210, 97);
+  }
+  75% {
+    stroke: rgb(52, 222, 234);
+  }
+  100% {
+    stroke: rgb(87, 120, 250);
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg);
+  }
 }
