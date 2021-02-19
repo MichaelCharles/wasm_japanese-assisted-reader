@@ -6,7 +6,6 @@ if (!WebAssembly.instantiateStreaming) {
 }
 
 const go = new Go();
-const el = {}
 let mod, inst;
 WebAssembly.instantiateStreaming(fetch("assets/lib.wasm"), go.importObject).then(
     async result => {

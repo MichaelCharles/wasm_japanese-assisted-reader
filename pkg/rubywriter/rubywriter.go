@@ -10,6 +10,10 @@ import (
 	"github.com/mcaubrey/wasm_japanese-assisted-reader/internal/ja"
 )
 
+var (
+	t *tokenizer.Tokenizer
+)
+
 func makeReverse(runes []rune) []rune {
 	str := ""
 	for i := 0; i < len(runes); i++ {
@@ -33,10 +37,19 @@ func getParts(surface []rune, hiragana []rune, kanjiStart int, kanjiEnd int) (er
 	return err, leading, kanji, furigana, trailing
 }
 
-func Write(input string) (output string) {
-	t, err := tokenizer.New(ipa.Dict(), tokenizer.OmitBosEos())
+func Init() {
+	dict := ipa.Dict()
+	opts := tokenizer.OmitBosEos()
+	j, err := tokenizer.New(dict, opts)
 	if err != nil {
 		panic(err)
+	}
+	t = j
+}
+
+func Write(input string) (output string) {
+	if t == nil {
+		Init()
 	}
 
 	text := strings.TrimSpace(input)

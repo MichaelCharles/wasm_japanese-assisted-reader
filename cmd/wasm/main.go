@@ -10,6 +10,7 @@ import (
 func main() {
 	c := make(chan struct{}, 0)
 	registerCallbacks()
+	go rubywriter.Init()
 	log.Print("WASM Instantiated.")
 	<-c
 }
