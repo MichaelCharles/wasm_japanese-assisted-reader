@@ -25,14 +25,10 @@ $(async () => {
 
   $parse.on("click", () => {
     $input.fadeOut(async () => {
-      console.log("A");
       const titleResult = await worker.read($titleInput.val());
-      console.log("B");
       const bodyResult = await worker.read($bodyInput.val());
-      console.log("C");
       $title.html(titleResult);
       $body.html(bodyResult);
-      console.log("Z");
       $reader.fadeIn(() => {
         $loadText.fadeIn();
       });
