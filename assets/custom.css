@@ -179,3 +179,7 @@ main {
     transform: rotate(450deg);
   }
 }
+
+.hidden {
+  display: none;
+}
