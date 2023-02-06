@@ -76,11 +76,11 @@ main {
   padding-bottom: 1.5em;
 }
 
-#spinner-container {
+#spinner {
   min-height: 75vh;
 }
 
-#spinner-container div {
+#spinner div {
   min-height: 400px;
   display: flex;
   align-items: center;

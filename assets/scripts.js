@@ -1,14 +1,13 @@
 $(async () => {
   $("#load-text").hide();
   $("#reader").hide();
-
-  const worker = await wasmWorker("lib.wasm", ["read"]);
-  $("#spinner-container").fadeOut(() => $("main").fadeIn());
+  const w = await wasmWorker("lib.wasm", ["read"]);
+  $("#spinner").fadeOut(() => $("main").fadeIn());
 
   $("#parse").on("click", () => {
     $("#input").fadeOut(async () => {
-      $("#title").html(await worker.read($("#title-input").val()));
-      $("#body").html(await worker.read($("#body-input").val()));
+      $("#title").html(await w.read($("#title-input").val()));
+      $("#body").html(await w.read($("#body-input").val()));
       $("#reader").fadeIn(() => $("#load-text").fadeIn());
     });
   });
